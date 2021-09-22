@@ -1,39 +1,44 @@
 import React from 'react';
-import { FlatList, StyleSheet, Text } from 'react-native';
-import { WORDS } from '../shared/words';
+import { View, SectionList, StyleSheet, Text } from 'react-native';
 
-function Catalog() {
-    const renderWord = ({ item }) => {
-        return(
-            <Text style={styles.listItem}>
-                {item.word}
-            </Text>
-        );
-    };
+const Item = ({ title }) => (
+    <View>
+        <Text style = {styles.word}>{title}</Text>
+    </View>
+);
 
+const Catalog = props => {
     return(
-        <FlatList
-            style={styles.flatList}
-            data={WORDS}
-            renderItem={renderWord}
-            keyExtractor={item=>item.id.toString()}
+        <SectionList
+            style = {styles.catalog}
+            sections = {props.words}
+            keyExtractor = {(item, index) => item + index}
+            renderItem = {({ item }) => <Item title = {item} />}
+            renderSectionHeader = {({ section: { title } }) => (
+                <Text style = {styles.header}>{title}</Text>
+            )}
         />
     );
 }
 
 const styles = StyleSheet.create({
-    listItem: {
-        color: '#1d466d',
-        fontSize: 20,
-        padding: 5
-    },
-    flatList: {
-        marginTop: 50,
-        marginRight: 50,
-        marginBottom: 5,
-        marginLeft: 50,
+    catalog: {
+        marginLeft: '10%',
+        marginRight: '10%',
         backgroundColor: 'white'
+    },
+    header: {
+        fontSize: 30,
+        color: 'white',
+        paddingLeft: 20,
+        backgroundColor: '#00589e',
+        marginBottom: 5
+    },
+    word: {
+        fontSize: 20,
+        paddingLeft: 20,
+        marginBottom: 5
     }
-});
+})
 
 export default Catalog;

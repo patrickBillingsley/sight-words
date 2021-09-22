@@ -1,162 +1,106 @@
 export const WORDS = [
     {
-        id: 0,
-        word: 'a'
+        title: 'A',
+        data: ['a', 'and', 'are', 'as', 'at']
     },
     {
-        id: 1,
-        word: 'and'
+        title: 'B',
+        data: ['be', 'by']
     },
     {
-        id: 2,
-        word: 'are'
+        title: 'C',
+        data: ['can']
     },
     {
-        id: 3,
-        word: 'as'
+        title: 'D',
+        data: ['down']
     },
     {
-        id: 4,
-        word: 'at'
+        title: 'E',
+        data: []
     },
     {
-        id: 5,
-        word: 'be'
+        title: 'F',
+        data: ['for', 'from']
     },
     {
-        id: 6,
-        word: 'by'
+        title: 'G',
+        data: ['go']
     },
     {
-        id: 7,
-        word: 'can'
+        title: 'H',
+        data: ['had', 'have', 'he', 'his']
     },
     {
-        id: 8,
-        word: 'down'
+        title: 'I',
+        data: ['I', 'in', 'is', 'it']
     },
     {
-        id: 9,
-        word: 'for'
+        title: 'J',
+        data: []
     },
     {
-        id: 10,
-        word: 'from'
+        title: 'K',
+        data: []
     },
     {
-        id: 11,
-        word: 'go'
+        title: 'L',
+        data: ['little', 'look']
     },
     {
-        id: 12,
-        word: 'had'
+        title: 'M',
+        data: []
     },
     {
-        id: 13,
-        word: 'have'
+        title: 'N',
+        data: ['not']
     },
     {
-        id: 14,
-        word: 'he'
+        title: 'O',
+        data: ['of', 'on', 'one', 'or']
     },
     {
-        id: 15,
-        word: 'his'
+        title: 'P',
+        data: []
     },
     {
-        id: 16,
-        word: 'I'
+        title: 'Q',
+        data: []
     },
     {
-        id: 17,
-        word: 'in'
+        title: 'R',
+        data: []
     },
     {
-        id: 18,
-        word: 'is'
+        title: 'S',
+        data: ['said', 'see']
     },
     {
-        id: 19,
-        word: 'it'
+        title: 'T',
+        data: ['that', 'the', 'they', 'this', 'to']
     },
     {
-        id: 20,
-        word: 'little'
+        title: 'U',
+        data: ['up']
     },
     {
-        id: 21,
-        word: 'look'
+        title: 'V',
+        data: []
     },
     {
-        id: 22,
-        word: 'not'
+        title: 'W',
+        data: ['was', 'we', 'with', 'word']
     },
     {
-        id: 23,
-        word: 'of'
+        title: 'X',
+        data: []
     },
     {
-        id: 24,
-        word: 'on'
+        title: 'Y',
+        data: ['you']
     },
     {
-        id: 25,
-        word: 'one'
-    },
-    {
-        id: 26,
-        word: 'or'
-    },
-    {
-        id: 27,
-        word: 'said'
-    },
-    {
-        id: 28,
-        word: 'see'
-    },
-    {
-        id: 29,
-        word: 'that'
-    },
-    {
-        id: 30,
-        word: 'the'
-    },
-    {
-        id: 31,
-        word: 'they'
-    },
-    {
-        id: 32,
-        word: 'this'
-    },
-    {
-        id: 33,
-        word: 'to'
-    },
-    {
-        id: 34,
-        word: 'up'
-    },
-    {
-        id: 35,
-        word: 'was'
-    },
-    {
-        id: 36,
-        word: 'we'
-    },
-    {
-        id: 37,
-        word: 'with'
-    },
-    {
-        id: 38,
-        word: 'word'
-    },
-    {
-        id: 39,
-        word: 'you'
-    },
-]
+        title: 'Z',
+        data: []
+    }
+];

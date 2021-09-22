@@ -6,7 +6,7 @@ import Main from './components/MainComponent';
 export default function App() {
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      <Main />
+      <Main style={styles.safeAreaView} />
     </SafeAreaView>
   );
 }
