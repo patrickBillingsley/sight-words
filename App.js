@@ -13,6 +13,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   safeAreaView: {
-    backgroundColor: '#1d466d'
+    backgroundColor: '#1d466d',
+    flex: 1
   }
 })
