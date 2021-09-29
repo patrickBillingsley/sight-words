@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, SectionList, StyleSheet, Text } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 
@@ -9,43 +9,34 @@ const Item = ({ title }) => (
 );  
 
 const Catalog = props => {
+    const listRef = useRef();
+
     const [data, setData] = useState(props.words);
-    let [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState(null);
 
     const searchFilterFunction = text => {
-        searchText = setSearchText(text);
+        setSearchText(text);
 
         const entries = Object.entries(data);
-        entries.forEach(entry => {
-            const letter = entry[1].title;
-            const wordList = entry[1].data;
+        entries.forEach((entry, index) => {
+            const section = entry[1].title;
+            const list = entry[1].data;
 
             if(!text) {
-                setData(props.words);
                 return;
             }
 
-            if(text.toUpperCase().slice(0, 1) === letter) {
-                setData([{
-                    title: letter,
-                    data: wordList
-                }]);
+            if(text.toUpperCase().slice(0, 1) === section) {
+                listRef.current.scrollToLocation({
+                    itemIndex: 0,
+                    sectionIndex: index
+                })
             }
         })
-
-        // const newData = data.forEach(letter => {
-            // letter.filter(item => {
-            //     const itemData = `${item.toUpperCase()}`
-            //     const textData = text.toUpperCase()
-    
-            //     return itemData.indexOf(textData) > -1;
-            // })
-        // })
-        // setData(newData);
     }
 
     return(
-        <View>
+        <React.Fragment>
             <SearchBar
                 placeHolder = 'Search'
                 value = {searchText}
@@ -56,17 +47,20 @@ const Catalog = props => {
             />
             <SectionList
                 style = {styles.catalog}
+                ref = {listRef}
                 sections = {data}
                 keyExtractor = {(item, index) => item + index}
-                renderItem = {({ item }) => {
-                    return <Item title = {item} />;
+                renderItem = {({ item }) => <Item title = {item} />}
+                renderSectionHeader = {({ section: { title, data } }) => {
+                    if(data.length) {
+                        return <Text style = {styles.header}>{title}</Text>
+                    } else {
+                        return;
+                    }
                 }}
-                renderSectionHeader = {({ section: { title } }) => (
-                    <Text style = {styles.header}>{title}</Text>
-                )}
                 stickySectionHeadersEnabled = {true}
             />
-        </View>
+        </React.Fragment>
     );
 }
 

@@ -7,7 +7,7 @@ const Main = () => {
     const [words, setWords] = useState(WORDS);
 
     return(
-        <View>
+        <View style={styles.view}>
             <Image style={styles.logo} source={require('../assets/logo.png')} />
             <Catalog words={words} />
         </View>
@@ -15,6 +15,9 @@ const Main = () => {
 }
 
 const styles = StyleSheet.create({
+    view: {
+        flex: 1
+    },
     logo: {
         width: '100%',
         resizeMode: 'contain',
