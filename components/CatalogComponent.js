@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, SectionList, StyleSheet, Text } from 'react-native';
 import { SearchBar } from 'react-native-elements';
+import { WORDS } from '../shared/words';
 
 const Item = ({ title }) => (
     <View>
@@ -8,10 +9,10 @@ const Item = ({ title }) => (
     </View>
 );  
 
-const Catalog = props => {
+const Catalog = () => {
     const listRef = useRef();
 
-    const [data, setData] = useState(props.words);
+    const [data, setData] = useState(WORDS);
     const [searchText, setSearchText] = useState(null);
 
     const searchFilterFunction = text => {
@@ -27,8 +28,12 @@ const Catalog = props => {
             }
 
             if(text.toUpperCase().slice(0, 1) === section) {
+                const regEx = new RegExp(`^${text.toLowerCase()}`)
+                const matchArray = list.filter(word => regEx.test(word));
+                const firstMatch = list.indexOf(matchArray[0]);
+
                 listRef.current.scrollToLocation({
-                    itemIndex: 0,
+                    itemIndex: firstMatch,
                     sectionIndex: index
                 })
             }
@@ -59,6 +64,7 @@ const Catalog = props => {
                     }
                 }}
                 stickySectionHeadersEnabled = {true}
+                initialNumToRender = {20}
             />
         </React.Fragment>
     );
