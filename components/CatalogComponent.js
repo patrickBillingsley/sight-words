@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { View, SectionList, StyleSheet, Text } from 'react-native';
+import { View, Image, SectionList, StyleSheet, Text } from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { WORDS } from '../shared/words';
 
@@ -41,7 +41,8 @@ const Catalog = () => {
     }
 
     return(
-        <React.Fragment>
+        <View style={styles.view}>
+            <Image style={styles.logo} source={require('../assets/logo.png')} />
             <SearchBar
                 placeHolder = 'Search'
                 value = {searchText}
@@ -66,11 +67,19 @@ const Catalog = () => {
                 stickySectionHeadersEnabled = {true}
                 initialNumToRender = {20}
             />
-        </React.Fragment>
+        </View>
     );
 }
 
 const styles = StyleSheet.create({
+    view: {
+        backgroundColor: '#00589e'
+    },
+    logo: {
+        width: '100%',
+        resizeMode: 'contain',
+        backgroundColor: 'white'
+    },
     catalog: {
         marginLeft: '10%',
         marginRight: '10%',
