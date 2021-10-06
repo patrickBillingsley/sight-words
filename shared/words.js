@@ -1,11 +1,11 @@
 export const WORDS = [
     {
         title: 'A',
-        data: ['a', 'and', 'are', 'as', 'at']
+        data: ['a', 'all', 'an', 'and', 'are', 'as', 'at']
     },
     {
         title: 'B',
-        data: ['be', 'by']
+        data: ['be', 'but', 'by']
     },
     {
         title: 'C',
@@ -17,7 +17,7 @@ export const WORDS = [
     },
     {
         title: 'E',
-        data: []
+        data: ['each']
     },
     {
         title: 'F',
@@ -77,11 +77,11 @@ export const WORDS = [
     },
     {
         title: 'T',
-        data: ['that', 'the', 'they', 'this', 'to']
+        data: ['that', 'the', 'there', 'they', 'this', 'to']
     },
     {
         title: 'U',
-        data: ['up']
+        data: ['up', 'use']
     },
     {
         title: 'V',
@@ -89,7 +89,7 @@ export const WORDS = [
     },
     {
         title: 'W',
-        data: ['was', 'we', 'with', 'word']
+        data: ['was', 'we', 'were', 'what', 'when', 'with', 'word']
     },
     {
         title: 'X',
@@ -97,7 +97,7 @@ export const WORDS = [
     },
     {
         title: 'Y',
-        data: ['you']
+        data: ['you', 'your']
     },
     {
         title: 'Z',
